@@ -1,5 +1,7 @@
 export type { Capability } from "./devices/capabilities.js";
 export type { DeviceIdentity, DeviceMetadata } from "./devices/identity.js";
+export { PreSharedTokenAuthenticator } from "./auth/authenticator.js";
+export type { AuthenticationRequest, DeviceAuthenticator } from "./auth/authenticator.js";
 export { DeviceRegistry } from "./devices/registry.js";
 export type { DeviceLifecycleState, DeviceRecord, DeviceRegistration } from "./devices/registry.js";
 export { createSessionId } from "./devices/session.js";
@@ -11,3 +13,5 @@ export { parseDeviceMessage } from "./protocol/validation.js";
 export type { ParseDeviceMessageResult } from "./protocol/validation.js";
 export { PROTOCOL_VERSION } from "./protocol/version.js";
 export type { ProtocolVersion } from "./protocol/version.js";
+export { DeviceNetworkServer } from "./transport/websocket.js";
+export type { DeviceNetworkServerOptions } from "./transport/websocket.js";

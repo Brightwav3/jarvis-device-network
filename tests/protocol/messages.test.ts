@@ -11,7 +11,7 @@ test("models a typed registration message", () => {
     payload: {
       device_id: "bedroom-01",
       device_type: "room_satellite",
-      capabilities: ["audio.input"],
+      capabilities: ["audio.input"], credential: "test-token",
     },
   };
 

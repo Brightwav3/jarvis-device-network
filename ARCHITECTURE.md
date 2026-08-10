@@ -24,6 +24,10 @@ Milestone 1 defines protocol version `1`, the common envelope, device registrati
 
 `DeviceRegistry` is an in-memory, transport-independent source of current device state. Registration creates an opaque session ID and makes the device online. A later registration with the same stable `device_id` replaces the current record atomically; commands or disconnects carrying the prior session no longer have authority. Registry queries return detached snapshots so consumers cannot mutate authoritative state.
 
+## Transport and authentication
+
+`DeviceNetworkServer` owns a local WebSocket listener and accepts only validated JSON messages. A connection has no authority until it supplies a `device.register` message with a credential. Authentication is isolated behind `DeviceAuthenticator`; `PreSharedTokenAuthenticator` is the local-development implementation. Credentials are validated but not stored in the registry or included in acknowledgements.
+
 ## Technology decision
 
 The v0.1 runtime is Node.js 22 with strict TypeScript and ESM. WebSocket over TCP is the planned initial transport, but no transport is implemented in this foundation.

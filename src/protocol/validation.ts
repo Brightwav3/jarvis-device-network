@@ -22,6 +22,7 @@ const registeredMessage = envelope.extend({
     room: nonEmpty.optional(),
     software_version: nonEmpty.optional(),
     capabilities: z.array(nonEmpty).max(128),
+    credential: nonEmpty,
   }).strict(),
 }).strict();
 

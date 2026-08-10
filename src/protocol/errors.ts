@@ -1,7 +1,10 @@
 export type ProtocolErrorCode =
   | "INVALID_MESSAGE"
   | "UNSUPPORTED_PROTOCOL_VERSION"
-  | "MESSAGE_TOO_LARGE";
+  | "MESSAGE_TOO_LARGE"
+  | "DEVICE_AUTH_FAILED"
+  | "DEVICE_NOT_REGISTERED"
+  | "SESSION_INVALID";
 
 export type ProtocolError = {
   ok: false;

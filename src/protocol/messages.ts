@@ -3,7 +3,7 @@ import type { DeviceIdentity, DeviceMetadata } from "../devices/identity.js";
 import type { ProtocolVersion } from "./version.js";
 
 export type DeviceMessageMap = {
-  "device.register": DeviceIdentity & DeviceMetadata & { capabilities: Capability[] };
+  "device.register": DeviceIdentity & DeviceMetadata & { capabilities: Capability[]; credential: string };
   "device.heartbeat": Record<string, never>;
   "device.event": { event: string; payload: Record<string, unknown> };
   "command.request": {

@@ -18,6 +18,10 @@ Milestone 1: Protocol Foundation — versioned envelope, typed message map, runt
 
 Milestone 2: Device Registry — in-memory metadata/session state, online/offline lifecycle, replacement connection policy, stale-session protection, and room/capability queries.
 
+Milestone 3: WebSocket Transport — local ephemeral-port server, validated registration handshake, structured acknowledgements, and clean connection lifecycle.
+
+Milestone 4: Authentication — replaceable authenticator contract and pre-shared-token local implementation; rejected credentials never register a device.
+
 ## Next milestone
 
-Milestone 3: WebSocket Transport — local server, registration handshake, structured message transport, and clean disconnect.
+Milestone 5: Heartbeat and Reconnection — configurable liveness timeout, offline transitions, reconnect, and stale-session invalidation.

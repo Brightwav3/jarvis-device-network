@@ -17,6 +17,7 @@ test("accepts a valid registration message", () => {
       room: "bedroom",
       software_version: "0.1.0",
       capabilities: ["audio.input", "audio.output"],
+      credential: "test-token",
     },
   });
 
