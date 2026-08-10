@@ -2,7 +2,7 @@
 
 ## Current state
 
-Foundation initialized. The repository contains documentation, a package entry point, and verification infrastructure only; no protocol, server, simulator, or device behavior has been implemented.
+Foundation and Milestone 1 are complete. The repository provides a documented, typed, runtime-validated protocol foundation. No network server, simulator, authentication behavior, or device-specific behavior has been implemented.
 
 ## Baseline checks
 
@@ -12,6 +12,10 @@ Passed on 2026-08-10:
 - `npm test`
 - `npm run build`
 
+## Completed milestone
+
+Milestone 1: Protocol Foundation — versioned envelope, typed message map, runtime validation, structured errors, device identity, and capability representation.
+
 ## Next milestone
 
-Milestone 1: Protocol Foundation — define the versioned message envelope, typed message map, runtime validation, structured errors, device identity, and capability representation through test-first development.
+Milestone 2: Device Registry — metadata, session identity, lifecycle state, deterministic replacement policy, room queries, and capability queries.

@@ -16,7 +16,11 @@ npm install
 npm run verify
 ```
 
-`verify` runs type checking, automated tests, and a production build. The initial repository intentionally has no runtime modules; Milestone 1 starts by defining and testing the protocol foundation.
+`verify` runs type checking, automated tests, and a production build.
+
+## Protocol foundation
+
+Milestone 1 provides a versioned message envelope, typed registration/heartbeat/command/event contracts, and safe runtime parsing of untrusted input. See [Protocol v1](docs/protocol/v1.md) for the message contract.
 
 ## Documentation
 
@@ -24,4 +28,3 @@ npm run verify
 - [Work plan](WORKPLAN.md)
 - [Progress](PROGRESS.md)
 - [Decision 0001](docs/decisions/0001-typescript-node-22.md)
-
