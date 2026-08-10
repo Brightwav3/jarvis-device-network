@@ -22,6 +22,10 @@ Milestone 3: WebSocket Transport — local ephemeral-port server, validated regi
 
 Milestone 4: Authentication — replaceable authenticator contract and pre-shared-token local implementation; rejected credentials never register a device.
 
+Milestone 5: Heartbeat and Reconnection — configurable heartbeat expiry, offline transition, reconnect registration, and stale-session invalidation.
+
+Milestone 6: Commands and Events — server-to-device typed command transport with result/timeout foundation and device-to-server unsolicited event delivery.
+
 ## Next milestone
 
-Milestone 5: Heartbeat and Reconnection — configurable liveness timeout, offline transitions, reconnect, and stale-session invalidation.
+Milestone 7: Simulator — configurable CLI clients supporting multiple independent software devices.

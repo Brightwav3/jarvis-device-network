@@ -67,4 +67,15 @@ export class DeviceRegistry {
     record.last_seen = now.toISOString();
     return true;
   }
+
+  /** Marks online records offline when their heartbeat age exceeds the supplied threshold. */
+  expire(now: Date, timeoutMs: number): DeviceRecord[] {
+    const expired: DeviceRecord[] = [];
+    for (const record of this.#devices.values()) {
+      if (record.state !== "online" || now.getTime() - Date.parse(record.last_seen) <= timeoutMs) continue;
+      record.state = "offline";
+      expired.push(snapshot(record));
+    }
+    return expired;
+  }
 }

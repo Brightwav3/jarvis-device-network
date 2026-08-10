@@ -14,4 +14,4 @@ export type { ParseDeviceMessageResult } from "./protocol/validation.js";
 export { PROTOCOL_VERSION } from "./protocol/version.js";
 export type { ProtocolVersion } from "./protocol/version.js";
 export { DeviceNetworkServer } from "./transport/websocket.js";
-export type { DeviceNetworkServerOptions } from "./transport/websocket.js";
+export type { CommandResult, DeviceCommand, DeviceNetworkServerOptions } from "./transport/websocket.js";

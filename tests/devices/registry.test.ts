@@ -41,3 +41,13 @@ test("returns detached record snapshots", () => {
 
   assert.deepEqual(registry.get(device.device_id)?.capabilities, ["audio.input", "audio.output"]);
 });
+
+test("marks only expired online devices offline", () => {
+  const registry = new DeviceRegistry();
+  registry.register(device, new Date("2026-08-10T10:00:00.000Z"));
+  registry.register({ ...device, device_id: "kitchen-01" }, new Date("2026-08-10T10:00:09.000Z"));
+
+  assert.deepEqual(registry.expire(new Date("2026-08-10T10:00:11.000Z"), 5_000).map(({ device_id }) => device_id), ["bedroom-01"]);
+  assert.equal(registry.get("bedroom-01")?.state, "offline");
+  assert.equal(registry.get("kitchen-01")?.state, "online");
+});

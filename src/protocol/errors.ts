@@ -4,7 +4,9 @@ export type ProtocolErrorCode =
   | "MESSAGE_TOO_LARGE"
   | "DEVICE_AUTH_FAILED"
   | "DEVICE_NOT_REGISTERED"
-  | "SESSION_INVALID";
+  | "SESSION_INVALID"
+  | "CAPABILITY_UNAVAILABLE"
+  | "COMMAND_TIMEOUT";
 
 export type ProtocolError = {
   ok: false;

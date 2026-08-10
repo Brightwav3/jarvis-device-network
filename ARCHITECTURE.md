@@ -28,6 +28,10 @@ Milestone 1 defines protocol version `1`, the common envelope, device registrati
 
 `DeviceNetworkServer` owns a local WebSocket listener and accepts only validated JSON messages. A connection has no authority until it supplies a `device.register` message with a credential. Authentication is isolated behind `DeviceAuthenticator`; `PreSharedTokenAuthenticator` is the local-development implementation. Credentials are validated but not stored in the registry or included in acknowledgements.
 
+## Liveness, commands, and events
+
+The server periodically expires registry records whose `last_seen` age exceeds the configured heartbeat timeout. Every message from an authoritative session refreshes liveness; devices reconnect by registering again and receive a new session. `sendCommand` routes a typed request only to an online device advertising the required capability, resolves a matching `command.result`, and applies a bounded timeout. `onDeviceEvent` publishes unsolicited typed device events without exposing WebSocket frames to consumers.
+
 ## Technology decision
 
 The v0.1 runtime is Node.js 22 with strict TypeScript and ESM. WebSocket over TCP is the planned initial transport, but no transport is implemented in this foundation.
