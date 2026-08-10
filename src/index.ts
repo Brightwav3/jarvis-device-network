@@ -1,5 +1,9 @@
 export type { Capability } from "./devices/capabilities.js";
 export type { DeviceIdentity, DeviceMetadata } from "./devices/identity.js";
+export { DeviceRegistry } from "./devices/registry.js";
+export type { DeviceLifecycleState, DeviceRecord, DeviceRegistration } from "./devices/registry.js";
+export { createSessionId } from "./devices/session.js";
+export type { SessionId } from "./devices/session.js";
 export { protocolError } from "./protocol/errors.js";
 export type { ProtocolError, ProtocolErrorCode } from "./protocol/errors.js";
 export type { DeviceMessage, DeviceMessageMap, MessageType } from "./protocol/messages.js";

@@ -16,6 +16,8 @@ Passed on 2026-08-10:
 
 Milestone 1: Protocol Foundation — versioned envelope, typed message map, runtime validation, structured errors, device identity, and capability representation.
 
+Milestone 2: Device Registry — in-memory metadata/session state, online/offline lifecycle, replacement connection policy, stale-session protection, and room/capability queries.
+
 ## Next milestone
 
-Milestone 2: Device Registry — metadata, session identity, lifecycle state, deterministic replacement policy, room queries, and capability queries.
+Milestone 3: WebSocket Transport — local server, registration handshake, structured message transport, and clean disconnect.
