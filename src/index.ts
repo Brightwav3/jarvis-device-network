@@ -1,5 +1,6 @@
 export type { Capability } from "./devices/capabilities.js";
 export type { DeviceIdentity, DeviceMetadata } from "./devices/identity.js";
+export { CentralSystemDeviceAdapter } from "./adapter/central-system.js";
 export { PreSharedTokenAuthenticator } from "./auth/authenticator.js";
 export type { AuthenticationRequest, DeviceAuthenticator } from "./auth/authenticator.js";
 export { DeviceRegistry } from "./devices/registry.js";

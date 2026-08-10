@@ -22,6 +22,16 @@ npm run verify
 
 Milestone 1 provides a versioned message envelope, typed registration/heartbeat/command/event contracts, and safe runtime parsing of untrusted input. See [Protocol v1](docs/protocol/v1.md) for the message contract.
 
+## Software simulator
+
+After building, start a simulated device against a running local server:
+
+```bash
+node dist/simulator/cli.js --url ws://127.0.0.1:8787 --id bedroom-01 --type room_satellite --credential local-secret --room bedroom --capability audio.input --capability audio.output
+```
+
+The simulator registers, sends heartbeats, returns successful simulated command results, and exits cleanly on `SIGINT` or `SIGTERM`.
+
 ## Documentation
 
 - [Architecture](ARCHITECTURE.md)

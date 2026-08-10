@@ -65,6 +65,11 @@ export class DeviceNetworkServer {
     this.#http = undefined;
     if (this.#heartbeatTimer !== undefined) clearInterval(this.#heartbeatTimer);
     this.#heartbeatTimer = undefined;
+    for (const [commandId, pending] of this.#commands) {
+      clearTimeout(pending.timer);
+      pending.reject(new Error("Server stopped"));
+      this.#commands.delete(commandId);
+    }
     if (wss !== undefined) await new Promise<void>((resolve) => wss.close(() => resolve()));
     if (http !== undefined) await new Promise<void>((resolve, reject) => http.close((error) => error === undefined ? resolve() : reject(error)));
   }

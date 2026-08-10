@@ -75,3 +75,15 @@ test("marks a connected device offline after missing heartbeats", async () => {
   socket.close();
   await server.stop();
 });
+
+test("times out a command when an otherwise healthy device does not respond", async () => {
+  const server = new DeviceNetworkServer({ authenticator: new PreSharedTokenAuthenticator({ "bedroom-01": "secret" }) });
+  const { port } = await server.start();
+  const socket = new WebSocket(`ws://127.0.0.1:${port}`);
+  await new Promise<void>((resolve, reject) => { socket.once("open", resolve); socket.once("error", reject); });
+  socket.send(JSON.stringify({ protocol_version: "1", type: "device.register", message_id: "m-1", timestamp: "2026-08-10T10:00:00.000Z", payload: { device_id: "bedroom-01", device_type: "room_satellite", capabilities: ["audio.output"], credential: "secret" } }));
+  await receive(socket);
+  await assert.rejects(server.sendCommand("bedroom-01", { capability: "audio.output", operation: "test", arguments: {} }, 10), /Command timeout/);
+  socket.close();
+  await server.stop();
+});

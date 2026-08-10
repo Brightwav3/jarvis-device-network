@@ -4,6 +4,9 @@
   "private": true,
   "description": "Headless, agent-oriented device communication infrastructure.",
   "type": "module",
+  "bin": {
+    "device-network-simulator": "./dist/simulator/cli.js"
+  },
   "engines": {
     "node": ">=22"
   },

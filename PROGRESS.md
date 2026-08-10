@@ -26,6 +26,12 @@ Milestone 5: Heartbeat and Reconnection — configurable heartbeat expiry, offli
 
 Milestone 6: Commands and Events — server-to-device typed command transport with result/timeout foundation and device-to-server unsolicited event delivery.
 
+Milestone 7: Simulator — headless configurable CLI and reusable software client supporting multiple simultaneous devices, heartbeats, simulated command results, events, disconnect, and reconnect.
+
+Milestone 8: Central-system adapter — narrow typed `CentralSystemDeviceAdapter` boundary for lifecycle, device queries, commands, and events.
+
+Milestone 9: Hardening — message-size bounds, strict runtime validation, authentication rejection, liveness expiry, stale-session protection, command timeout, clean shutdown, and multi-device integration coverage.
+
 ## Next milestone
 
-Milestone 7: Simulator — configurable CLI clients supporting multiple independent software devices.
+v0.1 is complete. The next project should implement a real consumer of this protocol; do not add AI, UI, or physical-device behavior here.
