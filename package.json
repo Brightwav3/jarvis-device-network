@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "tsc --project tsconfig.json",
-    "test": "node --import tsx --test",
+    "test": "node --import tsx --test tests/**/*.test.ts",
     "typecheck": "tsc --noEmit --project tsconfig.json",
     "verify": "npm run typecheck && npm test && npm run build"
   },
